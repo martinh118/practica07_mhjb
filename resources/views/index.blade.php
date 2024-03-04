@@ -21,17 +21,15 @@
     <div class="contenidor">
         <h1>Articles</h1>
 
-        <ul>
-        
+        <section class='articles'><ul>
     @forelse($arts as $articulo)        
-        <li>{{ $articulo->{'ID'} }} <br><small>{{ $articulo->{'article'} }}</small></li>      
+        <li><b>{{ $articulo->{'ID'} }}</b>: {{ $articulo->{'article'} }}</li>      
     @empty
-        <li>Cap projecte a mostrar!!!</li>
+        <li>Cap article a mostrar!!!</li>
     @endforelse
+    </ul></section>
 
-    {{ $arts->links() }}
-    </ul>
-
+    <section class='paginacio'><ul><il>{{ $arts->links() }}</il></ul></section>
     </div>
 </body>
 
