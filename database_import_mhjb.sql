@@ -11,11 +11,20 @@ CREATE TABLE IF NOT EXISTS `articles`(
 
 CREATE TABLE IF NOT EXISTS `users`(
     ID MEDIUMINT NOT NULL AUTO_INCREMENT,
-    nom_usuari text NOT NULL,
-    email_usuari text NOT NULL,
-    contra VARCHAR(512) NOT NULL,
-    token VARCHAR(50) NOT NULL,
+    name text NOT NULL,
+    email VARCHAR(120) NOT NULL,
+    password VARCHAR(512) NOT NULL,
+    updated_at VARCHAR(50) NOT NULL,
+    created_at VARCHAR(50) NOT NULL,
     PRIMARY KEY (ID)
+);
+
+CREATE TABLE IF NOT EXISTS `password_reset_tokens`(
+    email VARCHAR(120) NOT NULL,
+    token text NOT NULL,
+    created_at VARCHAR(50) NOT NULL,
+    PRIMARY KEY (email)
+
 );
 
 INSERT INTO `articles`(`ID`, `article`, `autor`) VALUES
